@@ -1,13 +1,16 @@
 {
   "name": "slsboot",
   "version": "0.1.0",
-  "description": "Shared codes for reflex-media's serverless templates.",
+  "description": "Configurations and scripts for reflex-media's serverless templates.",
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "slsboot-scripts": "./bin/slsboot-scripts.sh"
+    "slsboot-scripts": "./bin/slsboot-scripts.sh",
+    "slsboot-startweb": "./bin/slsboot-startweb.sh",
+    "slsboot-buildweb": "./bin/slsboot-buildweb.sh",
+    "slsboot-parseyaml": "./bin/slsboot-parseyaml.sh"
   },
   "engines": {
     "node": ">=10.0.0"

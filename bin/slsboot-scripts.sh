@@ -1,7 +1,5 @@
 #!/bin/bash
 
-'use strict';
-
 ###############################################################################
 #                                                                             #
 # INITIALIZE EVERYTHING                                                       #
@@ -51,17 +49,17 @@ done
 ENVFILE=${STAGE}
 
 # rewrite stage names
-if [ ${STAGE} == "production" ]; then
+if [[ ${STAGE} == "production" ]]; then
     STAGE="prod"
-elif [ ${STAGE} == "prod" ]; then
+elif [[ ${STAGE} == "prod" ]]; then
     ENVFILE="production"
-elif [ ${STAGE} == "staging" ]; then
+elif [[ ${STAGE} == "staging" ]]; then
     STAGE="stage"
-elif [ ${STAGE} == "stage" ]; then
+elif [[ ${STAGE} == "stage" ]]; then
     ENVFILE="staging"
-elif [ ${STAGE} == "development" ]; then
+elif [[ ${STAGE} == "development" ]]; then
     STAGE="dev"
-elif [ ${STAGE} == "dev" ]; then
+elif [[ ${STAGE} == "dev" ]]; then
     ENVFILE="development"
 fi
 
@@ -90,7 +88,7 @@ NC='\033[0m';
 
 function deploy_func_check ()
 {
-    if [ ${STAGE} == "prod" ]; then
+    if [[ ${STAGE} == "prod" ]]; then
         prompt_confirmation_deploy_function
     else
         deploy_func
@@ -152,7 +150,7 @@ function log_stream_func ()
 ###############################################################################
 
 if [ -n "$STAGE" ]; then
-    if [ ${STAGE} == "dev" ] || [ ${STAGE} == "stage" ] || [ ${STAGE} == "prod" ]; then
+    if [[ ${STAGE} == "dev" ]] || [[ ${STAGE} == "stage" ]] || [[ ${STAGE} == "prod" ]]; then
         if [ ${INVOKE} -eq 1 ]; then
             if [ -n "$FUNCTION" ]; then
                 invoke_func
